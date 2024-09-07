@@ -1,0 +1,17 @@
+---
+- name: Edit files
+  hosts: all
+  become: true
+  tasks:
+    - name: edit blog.txt on node01
+      replace:
+        path: /opt/music/blog.txt
+        regexp: 'Kodekloud'
+        replace: 'Ansible'
+      when: ansible_hostname == "node01"
+    - name: edit story.txt on node02
+      replace:
+        path: /opt/music/story.txt
+        regexp: 'Ansible'
+        replace: 'Kodekloud'
+      when: ansible_hostname == "node02"

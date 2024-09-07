@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: copy blog.txt
+      copy:
+        src: /usr/src/condition/blog.txt
+        dest: /opt/condition/.
+        mode: '0640'
+        owner: bob
+        group: bob
+      when: ansible_hostname == "node01"
+    - name: copy story.txt
+      copy:
+        src: /usr/src/condition/story.txt
+        dest: /opt/condition/.
+        mode: '0400'
+        owner: sam
+        group: sam
+      when: ansible_hostname == "node02"

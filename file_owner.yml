@@ -1,0 +1,17 @@
+---
+- name: perm.yml
+  hosts: all
+  become: true
+  tasks:
+    - name: edit blog.txt
+      file:
+        path: /opt/news/blog.txt
+        state: touch
+        group: sam
+      when:  ansible_hostname  == "node01"
+    - name: edit story.txt
+      file:
+        path: /opt/news/story.txt
+        state: touch
+        owner: sam
+      when:  ansible_hostname  == "node02"

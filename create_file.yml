@@ -1,0 +1,9 @@
+---
+- name: Create new file
+  hosts: node01
+  become: true
+  tasks:
+    - name: create file
+      copy:
+        dest: /opt/file.txt
+        content: "This file is created by Ansible!"

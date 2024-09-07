@@ -1,0 +1,7 @@
+---
+- name: command.yml
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: show resolv configuration
+      command: cat /etc/resolv.conf

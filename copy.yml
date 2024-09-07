@@ -1,0 +1,10 @@
+---
+- name: copy files
+  hosts: all
+  become: true
+  tasks:
+    - name: copy files
+      copy:
+        src: /usr/src/blog/index.html
+        dest: /opt/blog/.
+        remote_src: true
