@@ -3,4 +3,3 @@
 web:
    - http
    - https
-   - smtp
