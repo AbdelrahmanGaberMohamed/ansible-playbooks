@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: create file
+      copy:
+        dest: /home/gaber/ansible/file.txt
+        content: "This file is created by Ansible!"

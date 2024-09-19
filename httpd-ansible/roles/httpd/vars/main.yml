@@ -1,0 +1,6 @@
+---
+# vars file for httpd
+web:
+   - http
+   - https
+   - smtp

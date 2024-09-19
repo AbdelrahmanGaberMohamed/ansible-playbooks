@@ -1,0 +1,8 @@
+[web]
+web01 ansible_host=192.168.10.130 
+
+[web:vars]
+ansible_connection=ssh 
+ansible_user=gaber 
+ansible_ssh_password=admin@123
+ansible_become_password=admin@123
